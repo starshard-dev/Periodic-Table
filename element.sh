@@ -18,7 +18,7 @@ else
 if [[ $GET_INPUT =~ ^[0-9]+$ ]] 
 then
   ATOMIC_NUMBER=$GET_INPUT
-  GET_SYMBOL=$($PSQL "select symbol  from elements where atomic_number= $ATOMIC_NUMBER")
+  GET_SYMBOL=$($PSQL "select symbol from elements where atomic_number= $ATOMIC_NUMBER")
   if [[ -z $GET_SYMBOL ]]
   then
     echo "I could not find that element in the database."
